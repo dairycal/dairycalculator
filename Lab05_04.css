@@ -1,0 +1,74 @@
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    }
+    
+    .left img{
+    max-width: 370px;
+    }
+    
+    .quantity_wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    }
+    
+    .quantity_number{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    font-size: 30px;
+    align-items: center;
+    margin-bottom: 20px;
+    border-top:2px solid gainsboro;
+    border-bottom: 2px solid gainsboro ;
+    }
+    
+    .addsymbol,
+    .subsymbol{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    font-size: 30px;
+    align-items: center;
+    background-color: gainsboro;
+    margin-bottom: 20px;
+    cursor: pointer;
+    }
+    
+    input{
+    display: block;
+    width: 200px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    }
+    
+    .discount_header{
+    font-size: 25px;
+    }
+    
+    .total{
+    font-size: 25px;
+    border: 2px solid black;
+    position: relative;
+    padding: 30px;
+    }
+    
+    .total_text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
+    
+    .final_amount{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-weight: bold;
+    }

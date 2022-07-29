@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>
+</title>
+<style>
+    .container{
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    }
+    
+    .left img{
+    max-width: 370px;
+    }
+    
+    .quantity_wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    }
+    
+    .quantity_number{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    font-size: 30px;
+    align-items: center;
+    margin-bottom: 20px;
+    border-top:2px solid gainsboro;
+    border-bottom: 2px solid gainsboro ;
+    }
+    
+    .addsymbol,
+    .subsymbol{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    font-size: 30px;
+    align-items: center;
+    background-color: gainsboro;
+    margin-bottom: 20px;
+    cursor: pointer;
+    }
+    
+    input{
+    display: block;
+    width: 200px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    }
+    
+    .discount_header{
+    font-size: 25px;
+    }
+    
+    .total{
+    font-size: 25px;
+    border: 2px solid black;
+    position: relative;
+    padding: 30px;
+    }
+    
+    .total_text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
+    
+    .final_amount{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-weight: bold;
+    }
+</style>
+<head>
+<body>
+<h2 class="header">Maggi Hot & Sweet Tomato Chilly Sauce 200G</h2>
+<div class="container">
+<div class="left">
+<img src="sauce-image.jpg" alt="sauce image">
+</div>
+<div class="right">
+<h1>Price &#8195 &nbsp &nbsp Rs135</h1>
+<h1>Quantity</h1>
+<div class="quantity_wrapper">
+<div class="subsymbol"><div>-</div></div>
+<div class="quantity_number"></div>
+<div class="addsymbol"><div>+</div></div>
+</div>
+<label class="discount_header" for="discount">Discount</label>
+<input oninput="total()" class="discount_amt" type="text" name="discount" id="discount">
+<div class="total">
+<span class="total_text">Total:</span>
+<span class="final_amount"></span>
+</div>
+</div>
+</div>
+<script>
+    //declaring variables
+
+var quantity = 1;
+var discount = document.querySelector('.discount_amt');
+const addition = document.querySelector('.addsymbol');
+const subtraction = document.querySelector('.subsymbol');
+const quantityNumber = document.querySelector('.quantity_number');
+//function that gets called on click on either of the symbols
+document.querySelector('.final_amount').textContent = 'Rs. 135';
+const total = function () {
+document.querySelector('.quantity_number').textContent = quantity;
+var x = 135 * quantity - document.querySelector('.discount_amt').value;
+  if (x >= 0) {
+document.querySelector('.final_amount').textContent = "Rs. " + x;
+document.querySelector('.final_amount').style.color = 'black';
+} else {
+document.querySelector('.final_amount').style.color = 'red';
+
+document.querySelector('.final_amount').textContent = 'Error';
+}
+};
+
+//event handling
+addition.addEventListener('click', function () {
+quantity++;
+total();
+});
+subtraction.addEventListener('click', function () {
+quantity--;
+total();
+});
+
+document.querySelector('.quantity_number').textContent = quantity;
+</script>
+</body>
+</html>
